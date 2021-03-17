@@ -1,4 +1,4 @@
-# dataLayer Builder + Enhanced Ecommerce
+# Ajax RequestListener
 This custom template listens for xhr/fetch requests and push info to datalayer ajaxInfo and sends event ajaxSuccess.
 
 # Author
