@@ -1,5 +1,5 @@
 homepage: "https://www.knowit.no"
 documentation: "https://github.com/frodestorhaug/GTM-AjaxRequestListener/README.md"
 versions:
-  - sha: 49cd219165bf8f65459bb328566f6ae63dd7bc40
+  - sha: f6ebb049ed455a693e7910e9421be50b22c993dc
     changeNotes: Initial release.
