@@ -23,7 +23,7 @@ Important: This template will only work if the dataLayer used on the site hasn't
 'ajaxInfo': {
 	'ajaxEventMethod': 'get or post',
 	'ajaxEventUrl' : 'request url',
-	'ajaxPostData' : 'body data*,
+	'ajaxPostData' : 'body data',
 	'ajaxEventLabel' : ''
 }
 ```
