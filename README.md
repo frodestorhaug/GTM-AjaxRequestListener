@@ -19,7 +19,7 @@ Important: This template will only work if the dataLayer used on the site hasn't
 
 -Sets the following to dataLayer
 
-```yaml
+```javascript
 'ajaxInfo': {
 	'ajaxEventMethod': 'get or post',
 	'ajaxEventUrl' : 'request url',
