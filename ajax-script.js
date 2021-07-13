@@ -35,7 +35,8 @@
     function onFetchStart() {
         if (arguments && arguments.length > 0) {
             const inExcludeList = window.ajrS && window.ajrS.length > 0 ? window.ajrS.filter(e => arguments[0].startsWith(e.url)).length > 0 : false;
-            if (!inExcludeList) {
+            const inExcludeStringList = window.exStr && window.exStr.length > 0 ? window.exStr.filter(e => xhr.url.indexOf(e.excludedString) !== -1).length > 0 : false;
+            if (!inExcludeList && !inExcludeStringList) {
                 dataLayer.push({
                     'event': 'ajaxSuccess',
                     'ajaxInfo': {
