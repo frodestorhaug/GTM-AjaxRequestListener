@@ -14,7 +14,7 @@
                 return;
             }
             const inExcludeList = window.ajrS && window.ajrS.length > 0 ? window.ajrS.filter(e => xhr.url.startsWith(e.url)).length > 0 : false;
-            const inExcludeStringList = window.exStr && window.exStr.length > 0 ? window.exStr.filter(e => xhr.url.indexOf(e.excludedString) === -1).length > 0 : false;
+            const inExcludeStringList = window.exStr && window.exStr.length > 0 ? window.exStr.filter(e => xhr.url.indexOf(e.excludedString) !== -1).length > 0 : false;
             if (!inExcludeList && !inExcludeStringList) {
                 dataLayer.push({
                     'event': 'ajaxSuccess',
