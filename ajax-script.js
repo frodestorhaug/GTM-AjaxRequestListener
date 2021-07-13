@@ -14,7 +14,8 @@
                 return;
             }
             const inExcludeList = window.ajrS && window.ajrS.length > 0 ? window.ajrS.filter(e => xhr.url.startsWith(e.url)).length > 0 : false;
-            if (!inExcludeList) {
+            const inExcludeStringList = window.exStr && window.exStr.length > 0 ? window.exStr.filter(e => xhr.url.indexOf(e.excludedString) === -1).length > 0 : false;
+            if (!inExcludeList && !inExcludeStringList) {
                 dataLayer.push({
                     'event': 'ajaxSuccess',
                     'ajaxInfo': {
@@ -33,16 +34,18 @@
 
     function onFetchStart() {
         if (arguments && arguments.length > 0) {
-            const inExcludeList = window.ajrS && window.ajrS.length > 0 ? window.ajrS.filter(e => arguments[0].startsWith(e.url)).length > 0 : false; ;
-            dataLayer.push({
-                'event': 'ajaxSuccess',
-                'ajaxInfo': {
-                    'ajaxEventMethod': arguments?.length > 1 ? arguments[1]?.method : 'get',
-                    'ajaxEventUrl' : arguments[0],
-                    'ajaxPostData' : arguments?.length > 1 ? arguments[1]?.body : '',
-                    'ajaxEventLabel' : ''
-                }
-            });
+            const inExcludeList = window.ajrS && window.ajrS.length > 0 ? window.ajrS.filter(e => arguments[0].startsWith(e.url)).length > 0 : false;
+            if (!inExcludeList) {
+                dataLayer.push({
+                    'event': 'ajaxSuccess',
+                    'ajaxInfo': {
+                        'ajaxEventMethod': arguments?.length > 1 ? arguments[1]?.method : 'get',
+                        'ajaxEventUrl': arguments[0],
+                        'ajaxPostData': arguments?.length > 1 ? arguments[1]?.body : '',
+                        'ajaxEventLabel': ''
+                    }
+                });
+            }
         }
     }
 
