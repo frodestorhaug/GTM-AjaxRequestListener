@@ -12,7 +12,8 @@ Frode Storhaug (https://www.knowit.no/).
 # Description
 Important: This template will only work if the dataLayer used on the site hasn't been changed to a custom dataLayer name
 
--You can set a list of excluded urls. If requeste url starts with one in excluded list it is ignored
+-You can set a list of excluded urls. If requeste url starts with one in excluded list it is ignored (include http(s)://)
+-You can set a list of excluded strings. If requeste url include an excluded string it is ignored
 
 -Debug mode will console.log some details
 	-Excluded url list
